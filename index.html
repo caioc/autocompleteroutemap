@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Text Field Auto-complete with routes</title>
+</head>
+<body>
+
+	<div class="busca-container">
+ 		<input id="inputform" placeholder="Digite seu endereço" type="text" class="busca">
+ 	</div>
+
+ 	<div id="myMap" style="width: 500px; height: 300px"></div>
+	
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=AIzaSyAmohqoh4hggEHbIBeAss2Pbp6v8jAHPkE&alternatives=true"></script>
+	<script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+	<script src="autocompleteroutemap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.busca').acroute({
+				originType: 'geolocation',
+				destination: {
+					lat: '-12.435.222',
+					lng: '18.343.434'
+				},
+				showDetailedRoute: true,
+				showMap: true,
+				mapContainer: 'myMap'
+			})
+		});
+	</script>
+</body>
+</html>
